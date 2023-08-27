@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springboot-learn
+      username: root
+      password: root
+
+# ??myBatisPlus???Bean?MyBatis???????SpringBoot????????????sqlSessionFactoryBean????????
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
