@@ -1,0 +1,33 @@
+# ???Bean???
+servers:
+  # ????
+#  ipAddress: 127.0.0.1
+  ip-address: 127.0.0.1
+  port: 22
+  timeout: 3
+  data-size: 3KB
+
+datasource:
+  driverClassName: com.yangtao.mysql.Driver
+
+datasource2:
+  driverClassName: com.yangtao.mysql.Driver
+
+user:
+  name: kante
+  age: 22
+
+users:
+  - name: kante
+    age: 22
+  - name: liam
+    age: 23
+
+# 注入dog对象
+dog:
+  name: liam
+  age: 22
+
+BABY_CAT:
+  name: tom
+  kind: yemao

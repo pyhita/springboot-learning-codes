@@ -5,9 +5,19 @@ spring:
       url: jdbc:mysql://localhost:3306/springboot-learn
       username: root
       password: root
+  devtools:
+    restart:
+      # 不参与热部署
+      exclude: templates, public/**
+      enabled: false
 
-# ??myBatisPlus???Bean?MyBatis???????SpringBoot????????????sqlSessionFactoryBean????????
+#
 mybatis-plus:
   global-config:
     db-config:
       table-prefix: tbl_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 配置springboot 热部署
