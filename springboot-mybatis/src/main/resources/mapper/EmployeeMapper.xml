@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangtao.mapper.EmployeeMapper">
+
+    <resultMap id="employee" type="com.yangtao.entity.Employee">
+        <result property="empId" column="emp_id"/>
+        <result property="empName" column="emp_name"/>
+        <result property="empSalary" column="emp_salary"/>
+    </resultMap>
+
+    <select id="getEmployeByIdAndName" resultType="com.yangtao.entity.Employee">
+        SELECT emp_id AS empId, emp_name AS empName FROM `mybatis-example`.t_emp WHERE emp_name = #{empName} AND emp_id = #{empId}
+    </select>
+
+<!--    <insert id="save" useGeneratedKeys="true" keyProperty="empId">-->
+<!--        INSERT INTO `mybatis-example`.t_emp (emp_name, emp_salary)-->
+<!--        VALUES (#{empName}, #{empSalary})-->
+<!--    </insert>-->
+</mapper>
