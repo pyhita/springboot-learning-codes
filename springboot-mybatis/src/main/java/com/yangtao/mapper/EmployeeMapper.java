@@ -12,7 +12,6 @@ public interface EmployeeMapper {
     @Select("SELECT emp_id AS empId, emp_name AS empName FROM `mybatis-example`.t_emp")
     List<Employee> listEmployees();
 
-    // 多个简单类型参数
 //    @Select("SELECT emp_id AS empId, emp_name AS empName FROM `mybatis-example`.t_emp WHERE emp_id = #{empId} AND emp_name = #{empName}")
     Employee getEmployeByIdAndName(Integer empId, String empName);
 
@@ -22,4 +21,5 @@ public interface EmployeeMapper {
 
     @Select("SELECT * FROM `mybatis-example`.t_emp WHERE emp_id = #{idKey} AND emp_name = #{nameKey}")
     Employee getByMap(Map<String, Object> map);
+
 }
