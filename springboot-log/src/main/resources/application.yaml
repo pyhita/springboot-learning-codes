@@ -1,0 +1,13 @@
+server:
+  port: 9000
+
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} ===> %msg%n"
+  # group 对日志进行分组，然后可以对分组进行设置
+  group:
+    test: com.yangtao.controller,com.yangtao.abc
+  level:
+    test: debug
+# 日志相关的配置
