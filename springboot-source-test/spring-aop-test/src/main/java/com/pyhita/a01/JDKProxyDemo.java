@@ -17,7 +17,7 @@ public class JDKProxyDemo {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 1 创建目标对象
         Target target = new Target();
 
@@ -35,5 +35,7 @@ public class JDKProxyDemo {
         // 3 创建代理对象
         Foo proxy = (Foo) Proxy.newProxyInstance(JDKProxyDemo.class.getClassLoader(), target.getClass().getInterfaces(), handler);
         proxy.foo();
+        System.out.println(proxy.getClass().getName());
+        System.in.read();
     }
 }
