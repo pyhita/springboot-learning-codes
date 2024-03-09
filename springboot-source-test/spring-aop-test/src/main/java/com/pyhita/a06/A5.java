@@ -1,4 +1,4 @@
-package com.pyhita.a5;
+package com.pyhita.a06;
 
 import org.springframework.aop.support.StaticMethodMatcherPointcut;
 import org.springframework.core.annotation.MergedAnnotations;
