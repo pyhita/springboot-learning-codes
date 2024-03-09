@@ -15,7 +15,9 @@ public class A3 {
             @Override
             public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
                 System.out.println("before ... ");
-                method.invoke(target, args);
+//                method.invoke(target, args); 反射调用
+                proxy.invoke(target, args); // 无反射
+                proxy.invokeSuper(obj, args); // 无反射
                 return null;
             }
         });
