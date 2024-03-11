@@ -1,5 +1,6 @@
 package com.pyhita.a20.controller;
 
+import com.pyhita.a20.anno.Token;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -27,13 +28,15 @@ public class Controller1 {
     }
 
     @PutMapping("/test3")
-    public ModelAndView test3(String token) {
+    public ModelAndView test3(@Token String token) {
+        log.debug("<<<<<<<<<<<<<<<<<<<<<<<<");
         log.debug("test3({})", token);
         return null;
     }
 
     @RequestMapping("/test4")
 //    @ResponseBody
+    @com.pyhita.a20.anno.Yaml
     public User test4() {
         log.debug("test4");
         return new User("张三", 18);

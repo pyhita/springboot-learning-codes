@@ -1,6 +1,8 @@
 package com.pyhita.a20.config;
 
-import com.pyhita.embed.adapter.MyRequestMappingHandlerAdapter;
+import com.pyhita.a20.adapter.MyRequestMappingHandlerAdapter;
+import com.pyhita.a20.adapter.returnvalue.YamlReturnValueHandler;
+import com.pyhita.a20.resolver.TokenArguResolver;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
@@ -9,8 +11,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import java.util.List;
+
 @Configuration
-@ComponentScan("com.pyhita.embed.controller")
+@ComponentScan("com.pyhita.a20.controller")
 public class WebConfig {
 
 	// 内嵌的web 工厂
@@ -40,7 +44,10 @@ public class WebConfig {
 	// 定义RequestMappingHandlerAdapter
 	@Bean
 	public MyRequestMappingHandlerAdapter requestMappingHandlerAdapter() {
-		return new MyRequestMappingHandlerAdapter();
+		MyRequestMappingHandlerAdapter handlerAdapter = new MyRequestMappingHandlerAdapter();
+		handlerAdapter.setArgumentResolvers(List.of(new TokenArguResolver()));
+		handlerAdapter.setReturnValueHandlers(List.of(new YamlReturnValueHandler()));
+		return handlerAdapter;
 	}
 
 }
