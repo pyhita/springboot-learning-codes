@@ -1,4 +1,4 @@
-package com.pyhita.rocketmq.a_quickstart;
+package com.pyhita.rocketmq.native_api.a_quickstart;
 
 import com.pyhita.rocketmq.constant.MqConstant;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

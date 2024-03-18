@@ -1,14 +1,11 @@
-package com.pyhita.rocketmq.a_quickstart;
+package com.pyhita.rocketmq.native_api.a_quickstart;
 
 import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.rocketmq.constant.TimeFormatter;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
-import org.apache.rocketmq.client.producer.SendCallback;
-import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public class DelayProducer {
 
@@ -25,6 +22,6 @@ public class DelayProducer {
         message.setDelayTimeLevel(2);
         producer.send(message);
 
-        System.out.println("消息发送时间： " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
+        System.out.println("消息发送时间： " + LocalDateTime.now().format(TimeFormatter.DATE_TIME_FORMATTER));
     }
 }

@@ -1,6 +1,7 @@
-package com.pyhita.rocketmq.a_quickstart;
+package com.pyhita.rocketmq.native_api.e_retry;
 
 import com.pyhita.rocketmq.constant.MqConstant;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -9,30 +10,22 @@ import org.apache.rocketmq.common.message.MessageExt;
 
 import java.util.List;
 
-public class Consumer {
+@Slf4j
+public class DeadQueueConsumer {
 
     public static void main(String[] args) throws Exception {
-        // 1 创建consumer
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test-consumer");
-        // 2 设置nameserv
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("retry-consumer");
         consumer.setNamesrvAddr(MqConstant.NAME_SERVER);
-        // 订阅某个主题
-        consumer.subscribe("test-topic", "*");
-        // 4 设置回调函数，处理收到的消息
+        consumer.subscribe("%DLQ%retry-topic", "vip1");
         consumer.setMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                MessageExt ext = list.get(0);
-                String content = new String(ext.getBody());
-                System.out.println("content = " + content);
-                // 返回消息消费成功 ack
+                System.out.println("死信内容： " + new String(list.get(0).getBody()));
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
-        // 3 启动consumer
-        consumer.start();
 
-        // 5 挂起当前主线程
+        consumer.start();
         System.in.read();
     }
 }
