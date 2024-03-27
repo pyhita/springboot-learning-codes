@@ -13,9 +13,11 @@ public class KeyProducer {
 
     public static void main(String[] args) throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer("key-producer");
-        producer.setNamesrvAddr(MqConstant.NAME_SERVER);
+        producer.setNamesrvAddr(MqConstant.MAC_NAME_SERVER);
         producer.start();
-        Message message = new Message("key-topic", "vip1", UUID.randomUUID().toString(), "这是key 测试".getBytes());
+        String key = UUID.randomUUID().toString();
+        System.out.println("key = " + key);
+        Message message = new Message("key-topic", "vip1", key, "这是key 测试".getBytes());
         producer.send(message);
 
         producer.shutdown();

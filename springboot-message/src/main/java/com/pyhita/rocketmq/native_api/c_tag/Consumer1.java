@@ -14,7 +14,7 @@ public class Consumer1 {
     public static void main(String[] args) throws Exception {
         // 仅仅消费 tag：vip1
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("vip1-consumer");
-        consumer.setNamesrvAddr(MqConstant.NAME_SERVER);
+        consumer.setNamesrvAddr(MqConstant.MAC_NAME_SERVER);
         consumer.subscribe("tag-topic", "vip1");
         consumer.setMessageListener(new MessageListenerConcurrently() {
             @Override

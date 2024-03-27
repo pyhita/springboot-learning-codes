@@ -5,7 +5,6 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 
 public class OneWayProducer {
-
     /**
      * 异步的发送消息，通过回调函数确认是否发送成功
      * @param args

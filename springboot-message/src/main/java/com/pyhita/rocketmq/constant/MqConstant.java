@@ -2,5 +2,6 @@ package com.pyhita.rocketmq.constant;
 
 public interface MqConstant {
 
-    public static final String NAME_SERVER = "192.168.233.8:9876";
+    String NAME_SERVER = "192.168.233.8:9876";
+    String MAC_NAME_SERVER = "localhost:9876";
 }

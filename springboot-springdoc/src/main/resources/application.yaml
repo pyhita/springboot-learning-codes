@@ -1,0 +1,16 @@
+
+open:
+  api:
+    exclude-role-id-urls:
+      - /test/listPersons
+
+
+
+
+
+
+
+
+
+
+

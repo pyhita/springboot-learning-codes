@@ -11,7 +11,7 @@ public class Producer {
         // 1 创建producer
         DefaultMQProducer producer = new DefaultMQProducer("test-producer");
         // 2 连接namesrv
-        producer.setNamesrvAddr(MqConstant.NAME_SERVER);
+        producer.setNamesrvAddr(MqConstant.MAC_NAME_SERVER);
         // 3 启动producer
         producer.start();
         // 4 创建消息体

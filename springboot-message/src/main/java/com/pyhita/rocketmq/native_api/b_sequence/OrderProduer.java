@@ -1,7 +1,7 @@
 package com.pyhita.rocketmq.native_api.b_sequence;
 
 import com.pyhita.rocketmq.constant.MqConstant;
-import com.pyhita.rocketmq.native_api.entity.Order;
+import com.pyhita.rocketmq.entity.Order;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 
@@ -25,7 +25,7 @@ public class OrderProduer {
     public static void main(String[] args) throws Exception {
 
         DefaultMQProducer producer = new DefaultMQProducer("order-producer");
-        producer.setNamesrvAddr(MqConstant.NAME_SERVER);
+        producer.setNamesrvAddr(MqConstant.MAC_NAME_SERVER);
         producer.start();
         for (Order order : orders) {
             // 转成Message 对象

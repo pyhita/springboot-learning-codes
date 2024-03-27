@@ -27,33 +27,33 @@ public class RetryConsumer {
                 return ConsumeConcurrentlyStatus.RECONSUME_LATER;
             }
         });
-//        consumer.setMessageListener(new MessageListenerConcurrently() {
-//            @Override
-//            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-//                try {
-//                    // 执行消费的代码
-//                    System.out.println("消息体：" + new String(list.get(0).getBody()));
-//                    // 制造一个异常，表示消息消费失败
-//                    int i = 1 / 0;
-//                } catch (Exception e) {
-//                    log.error("消息消费失败， 消息Id是：{}", list.get(0).getKeys());
-//                    // 出现问题判断重试的次数
-//                    MessageExt ext = list.get(0);
-//                    int retry = ext.getReconsumeTimes();
-//                    System.out.println("retry = " + retry);
-//
-//                    if (retry >= 3) {
-//                        // 将消息确认了，存在DB 中进行后续处理
-//                        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-//                    } else {
-//                        // 进行消息重试
-//                        return ConsumeConcurrentlyStatus.RECONSUME_LATER;
-//                    }
-//                }
-//
-//                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-//            }
-//        });
+       consumer.setMessageListener(new MessageListenerConcurrently() {
+           @Override
+           public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
+               try {
+                   // 执行消费的代码
+                   System.out.println("消息体：" + new String(list.get(0).getBody()));
+                   // 制造一个异常，表示消息消费失败
+                   int i = 1 / 0;
+               } catch (Exception e) {
+                   log.error("消息消费失败， 消息Id是：{}", list.get(0).getKeys());
+                   // 出现问题判断重试的次数
+                   MessageExt ext = list.get(0);
+                   int retry = ext.getReconsumeTimes();
+                   System.out.println("retry = " + retry);
+
+                   if (retry >= 3) {
+                       // 将消息确认了，存在DB 中进行后续处理
+                       return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+                   } else {
+                       // 进行消息重试
+                       return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+                   }
+               }
+
+               return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+           }
+       });
         consumer.start();
 
         System.in.read();

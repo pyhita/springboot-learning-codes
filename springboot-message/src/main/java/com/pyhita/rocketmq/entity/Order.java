@@ -1,4 +1,4 @@
-package com.pyhita.rocketmq.native_api.entity;
+package com.pyhita.rocketmq.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

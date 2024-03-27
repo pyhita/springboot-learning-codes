@@ -19,7 +19,8 @@ public class DeadQueueConsumer {
         consumer.subscribe("%DLQ%retry-topic", "vip1");
         consumer.setMessageListener(new MessageListenerConcurrently() {
             @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list,
+                ConsumeConcurrentlyContext consumeConcurrentlyContext) {
                 System.out.println("死信内容： " + new String(list.get(0).getBody()));
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
