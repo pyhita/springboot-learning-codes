@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.native_api.e_retry;
 
-import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.constant.MqConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;

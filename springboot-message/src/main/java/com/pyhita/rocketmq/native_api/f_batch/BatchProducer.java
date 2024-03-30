@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.native_api.f_batch;
 
-import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.constant.MqConstant;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

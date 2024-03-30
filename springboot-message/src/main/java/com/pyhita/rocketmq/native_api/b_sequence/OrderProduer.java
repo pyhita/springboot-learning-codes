@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.native_api.b_sequence;
 
-import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.constant.MqConstant;
 import com.pyhita.rocketmq.entity.Order;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;

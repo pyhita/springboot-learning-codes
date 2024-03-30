@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.native_api.g_transaction;
 
-import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.constant.MqConstant;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;

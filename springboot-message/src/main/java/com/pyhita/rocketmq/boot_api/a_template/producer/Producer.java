@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.boot_api.a_template.producer;
 
-import com.pyhita.rocketmq.constant.TimeFormatter;
+import com.pyhita.constant.TimeFormatter;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;

@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.boot_api.a_template.consumer;
 
-import com.pyhita.rocketmq.constant.TimeFormatter;
+import com.pyhita.constant.TimeFormatter;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;

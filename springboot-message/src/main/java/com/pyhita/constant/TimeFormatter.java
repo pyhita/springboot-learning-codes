@@ -1,4 +1,4 @@
-package com.pyhita.rocketmq.constant;
+package com.pyhita.constant;
 
 import java.time.format.DateTimeFormatter;
 

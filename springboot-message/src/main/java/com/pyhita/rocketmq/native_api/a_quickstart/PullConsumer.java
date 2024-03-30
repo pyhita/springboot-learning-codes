@@ -1,6 +1,6 @@
 package com.pyhita.rocketmq.native_api.a_quickstart;
 
-import com.pyhita.rocketmq.constant.MqConstant;
+import com.pyhita.constant.MqConstant;
 import java.util.List;
 import org.apache.rocketmq.client.consumer.DefaultLitePullConsumer;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;

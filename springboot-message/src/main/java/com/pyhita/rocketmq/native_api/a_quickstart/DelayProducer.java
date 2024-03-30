@@ -1,7 +1,7 @@
 package com.pyhita.rocketmq.native_api.a_quickstart;
 
-import com.pyhita.rocketmq.constant.MqConstant;
-import com.pyhita.rocketmq.constant.TimeFormatter;
+import com.pyhita.constant.MqConstant;
+import com.pyhita.constant.TimeFormatter;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 
