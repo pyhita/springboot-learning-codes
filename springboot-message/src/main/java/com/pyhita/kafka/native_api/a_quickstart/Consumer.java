@@ -16,7 +16,7 @@ public class Consumer {
     public static void main(String[] args) throws Exception {
         // 1 创建ConfigMap 配置对象
         Map<String, Object> configMap = new HashMap<>();
-        configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, MqConstant.BOOTSTRAP_SERVER);
+        configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, MqConstant.CLUSTER_ZK_BOOTSTRAP_SERVER);
         configMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         configMap.put(ConsumerConfig.GROUP_ID_CONFIG, "test-consumer");

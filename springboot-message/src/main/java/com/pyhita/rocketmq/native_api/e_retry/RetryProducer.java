@@ -1,10 +1,9 @@
 package com.pyhita.rocketmq.native_api.e_retry;
 
 import com.pyhita.constant.MqConstant;
+import java.util.UUID;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
-
-import java.util.UUID;
 
 /**
  * 发送消息的时候 可以设定消息的key，这个是我们业务相关的数据，有我们自己保证唯一性
