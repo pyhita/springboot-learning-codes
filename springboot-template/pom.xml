@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
   <groupId>org.pyhita</groupId>
-  <artifactId>springboot-template</artifactId>
+  <artifactId>springboot-commons-util</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>springboot-template</name>
+  <name>springboot-commons-util</name>
   <url>http://maven.apache.org</url>
 
   <properties>
