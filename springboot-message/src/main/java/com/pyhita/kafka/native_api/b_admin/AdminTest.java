@@ -1,4 +1,4 @@
-package com.pyhita.kafka.native_api.b_topic;
+package com.pyhita.kafka.native_api.b_admin;
 
 
 import org.apache.kafka.clients.admin.Admin;
