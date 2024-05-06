@@ -74,6 +74,28 @@
         <artifactId>protostuff-runtime</artifactId>
         <version>1.8.0</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.boofcv/boofcv-ip -->
+
+<!--      implementation( group: 'org.boofcv', name: 'boofcv-core', version: '0.36' ){-->
+<!--      exclude group: 'org.yaml', module: 'snakeyaml'-->
+<!--      }-->
+      <dependency>
+        <groupId>org.boofcv</groupId>
+        <artifactId>boofcv-core</artifactId>
+        <version>0.36</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+      <dependency>
+        <groupId>com.google.zxing</groupId>
+        <artifactId>core</artifactId>
+        <version>3.4.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
+      <dependency>
+        <groupId>com.google.zxing</groupId>
+        <artifactId>javase</artifactId>
+        <version>3.4.1</version>
+      </dependency>
     </dependencies>
 
     <build>
